@@ -8,6 +8,7 @@
     name="description"
     content="SanaTech développe Sana-e, une plateforme de santé mentale intelligente pensée pour les patients et les thérapeutes."
   />
+
   <style>
     :root {
       --bg: #0b0f19;
@@ -546,6 +547,13 @@
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
+    #form-status {
+      display: none;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .footer {
       padding: 34px 0 54px;
       color: #95a3b8;
@@ -881,11 +889,7 @@
           <h3>Formulaire de contact</h3>
           <p>Complétez ce formulaire et nous reviendrons vers vous rapidement.</p>
 
-          <form action="https://formspree.io/f/mjgjvjvj" method="POST">
-            <input type="hidden" name="_next" value="https://sanatech.fr/merci.html">
-            <input type="hidden" name="_subject" value="Nouveau contact depuis le site SanaTech">
-            <input type="hidden" name="_language" value="fr">
-
+          <form id="contact-form">
             <div class="form-row">
               <div>
                 <label for="prenom">Prénom</label>
@@ -940,6 +944,7 @@
             </p>
 
             <button type="submit" class="submit-btn">Envoyer ma demande</button>
+            <p id="form-status"></p>
           </form>
         </div>
       </div>
@@ -954,5 +959,39 @@
     </div>
     <div>Contact : contact@sanatech.fr</div>
   </footer>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      status.style.display = "block";
+      status.textContent = "Envoi en cours...";
+
+      const data = new FormData(form);
+
+      data.append("_subject", "Nouveau contact depuis le site SanaTech");
+
+      try {
+        const response = await fetch("https://formspree.io/f/mjgjvjvj", {
+          method: "POST",
+          body: data,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          window.location.href = "/merci.html";
+        } else {
+          status.textContent = "Une erreur est survenue. Merci de réessayer.";
+        }
+      } catch (error) {
+        status.textContent = "Impossible d’envoyer le formulaire pour le moment.";
+      }
+    });
+  </script>
 </body>
 </html>
