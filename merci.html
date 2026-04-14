@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merci | SanaTech</title>
+  <meta name="description" content="Merci pour votre message. L’équipe SanaTech vous répondra rapidement." />
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --text: #ffffff;
+      --muted: #b8c1d1;
+      --border: rgba(255,255,255,0.10);
+      --blue: #0a2540;
+      --blue-2: #00b4d8;
+      --green: #2ecc71;
+      --shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(46,204,113,.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(10,37,64,.35), transparent 30%),
+        linear-gradient(180deg, #0a0e17 0%, #0b0f19 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+      background: linear-gradient(180deg, rgba(17,24,39,.96), rgba(11,15,25,.96));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 42px 34px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(46,204,113,.12);
+      color: #a4f2c5;
+      border: 1px solid rgba(46,204,113,.25);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 46px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .accent {
+      color: var(--green);
+    }
+
+    p {
+      margin: 0 auto 28px;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 16px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.12);
+      color: #fff;
+      text-decoration: none;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: .96;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.04);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 14px;
+      color: #95a3b8;
+    }
+
+    .footer-note a {
+      color: #d7dfec;
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 30px 22px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">Message envoyé</div>
+    <h1>Merci pour votre <span class="accent">message</span></h1>
+    <p>
+      Votre demande a bien été transmise à l’équipe SanaTech.
+      Nous reviendrons vers vous rapidement pour répondre à votre besoin,
+      organiser une démonstration ou poursuivre l’échange.
+    </p>
+
+    <div class="actions">
+      <a href="/index.html" class="btn btn-primary">Retour au site</a>
+      <a href="/confidentialite.html" class="btn btn-secondary">Confidentialité</a>
+    </div>
+
+    <div class="footer-note">
+      SanaTech • Sana-e • <a href="/mentions-legales.html">Mentions légales</a>
+    </div>
+  </div>
+</body>
+</html>

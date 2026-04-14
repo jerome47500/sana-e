@@ -8,7 +8,6 @@
     name="description"
     content="SanaTech développe Sana-e, une plateforme de santé mentale intelligente pensée pour les patients et les thérapeutes."
   />
-
   <style>
     :root {
       --bg: #0b0f19;
@@ -17,7 +16,7 @@
       --card-2: #0f172a;
       --text: #ffffff;
       --muted: #b8c1d1;
-      --border: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.10);
       --blue: #0a2540;
       --blue-2: #00b4d8;
       --green: #2ecc71;
@@ -51,11 +50,6 @@
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     .wrap {
@@ -116,7 +110,7 @@
       padding: 12px 16px;
       border-radius: 14px;
       background: linear-gradient(135deg, var(--blue), #14395c);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.10);
       color: var(--white);
       font-weight: 700;
       box-shadow: var(--shadow);
@@ -150,9 +144,7 @@
       margin-bottom: 18px;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       margin: 0;
       letter-spacing: -0.03em;
     }
@@ -194,7 +186,8 @@
 
     .btn:hover,
     .pricing-btn:hover,
-    .nav-cta:hover {
+    .nav-cta:hover,
+    .submit-btn:hover {
       transform: translateY(-1px);
       opacity: 0.96;
     }
@@ -553,16 +546,20 @@
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .submit-btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.97;
-    }
-
     .footer {
       padding: 34px 0 54px;
       color: #95a3b8;
       text-align: center;
       font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer a {
+      color: #d7dfec;
+    }
+
+    .footer a:hover {
+      color: var(--white);
     }
 
     @media (max-width: 980px) {
@@ -644,10 +641,7 @@
     <section class="hero" id="top">
       <div>
         <div class="eyebrow">HealthTech • Suivi longitudinal • Assistant thérapeute</div>
-        <h1>
-          La santé mentale,<br />
-          <span class="accent">mieux suivie</span>, mieux comprise.
-        </h1>
+        <h1>La santé mentale,<br><span class="accent">mieux suivie</span>, mieux comprise.</h1>
         <p class="lead">
           Sana-e est une plateforme de santé mentale intelligente conçue par SanaTech
           pour transformer les données quotidiennes en indicateurs utiles, améliorer
@@ -695,8 +689,7 @@
       <p class="section-sub">
         SanaTech développe des solutions numériques au service de la santé mentale.
         L’ambition de l’entreprise est claire : utiliser la technologie pour mieux
-        comprendre, mieux connecter et mieux accompagner les parcours de bien-être
-        psychologique.
+        comprendre, mieux connecter et mieux accompagner les parcours de bien-être psychologique.
       </p>
 
       <div class="grid-3">
@@ -719,8 +712,8 @@
         <div class="card">
           <h3>Impacter</h3>
           <p>
-            Permettre une meilleure compréhension de la santé mentale entre les
-            consultations et renforcer la prévention par un suivi longitudinal utile.
+            Permettre une meilleure compréhension de la santé mentale entre les consultations
+            et renforcer la prévention par un suivi longitudinal utile.
           </p>
         </div>
       </div>
@@ -771,9 +764,7 @@
           <span class="badge">Patient</span>
           <h3>Gratuit</h3>
           <div class="price">0€ / mois</div>
-          <p class="desc">
-            Découvrir Sana-e et suivre son bien-être au quotidien.
-          </p>
+          <p class="desc">Découvrir Sana-e et suivre son bien-être au quotidien.</p>
           <ul>
             <li>Suivi quotidien : humeur, stress, sommeil</li>
             <li>Score de bien-être simplifié</li>
@@ -841,8 +832,8 @@
 
           <div>
             <h3>Questions fréquentes</h3>
-            <p><strong>Puis-je tester gratuitement ?</strong><br />Oui, une version bêta est disponible pour découvrir Sana-e.</p>
-            <p><strong>Puis-je arrêter à tout moment ?</strong><br />Oui, sans engagement.</p>
+            <p><strong>Puis-je tester gratuitement ?</strong><br>Oui, une version bêta est disponible pour découvrir Sana-e.</p>
+            <p><strong>Puis-je arrêter à tout moment ?</strong><br>Oui, sans engagement.</p>
           </div>
         </div>
       </div>
@@ -888,58 +879,34 @@
 
         <div class="contact-card">
           <h3>Formulaire de contact</h3>
-          <p>
-            Complétez ce formulaire et nous reviendrons vers vous rapidement.
-          </p>
+          <p>Complétez ce formulaire et nous reviendrons vers vous rapidement.</p>
 
-          <form
-            action="https://formspree.io/f/mjgjvjvj"
-            method="POST"
-          >
+          <form action="https://formspree.io/f/TON_ENDPOINT_FORMSPREE" method="POST">
+            <input type="hidden" name="_next" value="https://sanatech.fr/merci.html">
+            <input type="hidden" name="_subject" value="Nouveau contact depuis le site SanaTech">
+            <input type="hidden" name="_language" value="fr">
+
             <div class="form-row">
               <div>
                 <label for="prenom">Prénom</label>
-                <input
-                  type="text"
-                  id="prenom"
-                  name="prenom"
-                  placeholder="Votre prénom"
-                  required
-                />
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
               </div>
 
               <div>
                 <label for="nom">Nom</label>
-                <input
-                  type="text"
-                  id="nom"
-                  name="nom"
-                  placeholder="Votre nom"
-                  required
-                />
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
               </div>
             </div>
 
             <div class="form-row">
               <div>
                 <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="votre@email.com"
-                  required
-                />
+                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
               </div>
 
               <div>
                 <label for="telephone">Téléphone</label>
-                <input
-                  type="tel"
-                  id="telephone"
-                  name="telephone"
-                  placeholder="Votre numéro"
-                />
+                <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro">
               </div>
             </div>
 
@@ -958,31 +925,18 @@
 
             <div>
               <label for="sujet">Sujet</label>
-              <input
-                type="text"
-                id="sujet"
-                name="sujet"
-                placeholder="Objet de votre demande"
-                required
-              />
+              <input type="text" id="sujet" name="sujet" placeholder="Objet de votre demande" required>
             </div>
 
             <div>
               <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Décrivez votre besoin, votre contexte ou votre demande de démo..."
-                required
-              ></textarea>
+              <textarea id="message" name="message" placeholder="Décrivez votre besoin, votre contexte ou votre demande de démo..." required></textarea>
             </div>
 
-            <input type="hidden" name="_subject" value="Nouveau contact depuis le site SanaTech" />
-            <input type="hidden" name="_language" value="fr" />
-
             <p class="form-note">
-              En envoyant ce formulaire, vous acceptez d’être recontacté dans le cadre
-              de votre demande.
+              En envoyant ce formulaire, vous acceptez d’être recontacté dans le cadre de votre demande.
+              Pour en savoir plus, consultez notre
+              <a href="/confidentialite.html">politique de confidentialité</a>.
             </p>
 
             <button type="submit" class="submit-btn">Envoyer ma demande</button>
@@ -993,7 +947,12 @@
   </main>
 
   <footer class="footer">
-    SanaTech • Sana-e • Plateforme de santé mentale intelligente
+    <div>SanaTech • Sana-e • Plateforme de santé mentale intelligente</div>
+    <div>
+      <a href="/mentions-legales.html">Mentions légales</a> •
+      <a href="/confidentialite.html">Politique de confidentialité</a>
+    </div>
+    <div>Contact : contact@sanatech.fr</div>
   </footer>
 </body>
 </html>
