@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sana-e – Suivi intelligent de la santé mentale</title>
+
+<style>
+body {
+  margin:0;
+  font-family: 'Inter', sans-serif;
+  background:#0F0F0F;
+  color:#FFFFFF;
+}
+
+.container {
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+  text-align:center;
+}
+
+h1 {
+  font-size:3rem;
+  background:linear-gradient(90deg,#00B4D8,#2ECC71);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+h2 {
+  margin-top:60px;
+  color:#E0E0E0;
+}
+
+p {
+  color:#CFCFCF;
+  line-height:1.6;
+}
+
+.cta a {
+  background:linear-gradient(90deg,#00B4D8,#2ECC71);
+  padding:15px 30px;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  display:inline-block;
+  margin-top:20px;
+}
+
+.features {
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:#121212;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid #1f1f1f;
+}
+
+.section {
+  margin-top:60px;
+}
+
+.badge {
+  display:inline-block;
+  margin-top:10px;
+  font-size:0.85rem;
+  color:#2ECC71;
+}
+
+footer {
+  margin-top:80px;
+  font-size:0.9rem;
+  color:#888;
+}
+
+footer a {
+  color:#2ECC71;
+  margin:0 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<h1>Sana-e</h1>
+
+<p style="font-size:1.3rem;">
+Mieux suivre sa santé mentale,<br>
+<strong>mieux la comprendre.</strong>
+</p>
+
+<p>
+Transformez vos ressentis quotidiens en indicateurs clairs pour mieux comprendre votre évolution mentale.
+</p>
+
+<div class="cta">
+<a href="#formulaire">🚀 Rejoindre la bêta</a>
+</div>
+
+<p class="badge">Accès limité – premiers utilisateurs</p>
+
+<!-- PROBLEME -->
+<div class="section">
+<h2>Pourquoi Sana-e ?</h2>
+
+<p>
+Entre deux consultations, il est difficile de suivre son état mental. 
+Les ressentis évoluent, mais restent souvent non structurés et difficiles à analyser.
+</p>
+</div>
+
+<!-- SOLUTION UTILISATEUR -->
+<div class="section">
+<h2>Une nouvelle approche du suivi mental</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>📊 Suivi quotidien</h3>
+<p>Humeur, stress et sommeil suivis dans le temps.</p>
+</div>
+
+<div class="card">
+<h3>🧠 Analyse intelligente</h3>
+<p>Transformation des données en indicateurs utiles.</p>
+</div>
+
+<div class="card">
+<h3>📈 Vision long terme</h3>
+<p>Comprenez votre évolution et détectez des tendances.</p>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION PRO -->
+<div class="section">
+<h2>Pour les professionnels de santé</h2>
+
+<p>
+Sana-e permet également d’améliorer le suivi des patients entre les consultations,
+grâce à une vision structurée et longitudinale de leur évolution.
+</p>
+
+<div class="features">
+
+<div class="card">
+<h3>👨‍⚕️ Suivi continu</h3>
+<p>Accès à des données entre les séances.</p>
+</div>
+
+<div class="card">
+<h3>📊 Indicateurs exploitables</h3>
+<p>Lecture claire de l’évolution du patient.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Consentement sécurisé</h3>
+<p>Partage des données contrôlé par l’utilisateur.</p>
+</div>
+
+</div>
+</div>
+
+<!-- VISION -->
+<div class="section">
+<h2>Notre vision</h2>
+
+<p>
+Créer une nouvelle génération d’outils de suivi en santé mentale,
+basée sur la donnée, l’analyse et la compréhension dans le temps.
+</p>
+</div>
+
+<!-- CTA FINAL -->
+<div class="section">
+<h2>Rejoindre Sana-e</h2>
+
+<p>
+Sana-e est en cours de lancement. 
+Rejoignez les premiers utilisateurs et participez à la construction de la solution.
+</p>
+
+<div class="cta">
+<a href="#formulaire">🔥 Accéder à la bêta</a>
+</div>
+</div>
+
+<!-- FORMULAIRE -->
+<div class="section" id="formulaire">
+
+<h2>Demander un accès</h2>
+
+<form id="form">
+<input type="text" name="name" placeholder="Nom" required><br><br>
+<input type="email" name="email" placeholder="Email" required><br><br>
+
+<select name="profil" required>
+<option value="">Vous êtes ?</option>
+<option>Utilisateur</option>
+<option>Professionnel de santé</option>
+</select><br><br>
+
+<textarea name="message" placeholder="Pourquoi souhaitez-vous rejoindre Sana-e ?" required></textarea><br><br>
+
+<label>
+<input type="checkbox" required>
+J’accepte la politique de confidentialité
+</label><br><br>
+
+<button type="submit">Envoyer</button>
+
+<p id="success" style="display:none; color:#2ECC71; margin-top:15px;">
+Merci ! Votre demande a été envoyée.
+</p>
+
+</form>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+<a href="/mentions-legales.html">Mentions légales</a>
+<a href="/confidentialite.html">Confidentialité</a>
+<a href="#">Contact</a>
+</footer>
+
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://formspree.io/f/mykledld", {
+    method: "POST",
+    body: new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  }).then(() => {
+    document.getElementById("success").style.display = "block";
+    this.reset();
+  });
+});
+</script>
+
+</body>
+</html>
