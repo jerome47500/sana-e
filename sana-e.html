@@ -52,11 +52,6 @@
             border: none;
             border-radius: 14px;
             cursor: pointer;
-            transition: all 0.3s;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
         }
         .section {
             margin: 90px 0;
@@ -123,15 +118,13 @@
 
 <div class="container">
 
-    <!-- HERO -->
     <h1>Sana-e</h1>
     <p class="subtitle">Suivez votre santé mentale comme on suit sa santé physique.</p>
     
     <div class="badge">🚀 Lancement officiel de la bêta le 18 mai 2026</div>
 
     <p style="font-size:1.3rem; max-width:750px; margin:35px auto;">
-        Transformez vos ressentis quotidiens en <strong>score global</strong>, tendances, alertes et rapports intelligents — 
-        pour vous et pour votre thérapeute.
+        Transformez vos ressentis quotidiens en score global, tendances, alertes et rapports intelligents — pour vous et pour votre thérapeute.
     </p>
 
     <button onclick="document.getElementById('tarification').scrollIntoView({behavior: 'smooth'})" class="cta-button">
@@ -144,85 +137,64 @@
 
         <div class="pricing-grid">
 
-            <!-- Patient -->
             <div class="pricing-card">
                 <h3>Pour les patients</h3>
                 <div class="price">12,99 €</div>
-                <p style="color:#2ECC71; font-weight:bold;">ou 119 € / an (soit ~9,92 €/mois)</p>
-                
+                <p style="color:#2ECC71; font-weight:bold;">ou 119 € / an</p>
                 <ul class="features-list">
                     <li>✓ Suivi quotidien (humeur, stress, sommeil, énergie)</li>
                     <li>✓ Score global de santé mentale</li>
-                    <li>✓ Courbes d’évolution et tendances</li>
+                    <li>✓ Courbes d’évolution</li>
                     <li>✓ Recommandations IA légère</li>
                     <li>✓ Historique illimité</li>
-                    <li>✓ Sans publicité</li>
                 </ul>
-                <button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%; padding:16px;">Rejoindre en tant que patient</button>
+                <button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%;">Rejoindre en tant que patient</button>
             </div>
 
-            <!-- Professionnel -->
             <div class="pricing-card popular">
                 <div class="popular-badge">Recommandé</div>
                 <h3>Pour les professionnels</h3>
                 <div class="price">49,99 €</div>
                 <p style="margin-bottom:30px;">par mois</p>
-                
                 <ul class="features-list">
                     <li>✓ Dashboard complet multi-patients</li>
                     <li>✓ Alertes précoces et IA légère</li>
-                    <li>✓ Rapports automatiques avant consultation</li>
-                    <li>✓ Suivi longitudinal détaillé</li>
-                    <li>✓ Code d’invitation patients sécurisé</li>
-                    <li>✓ Gain de temps en consultation</li>
+                    <li>✓ Rapports automatiques</li>
+                    <li>✓ Suivi longitudinal</li>
+                    <li>✓ Code d’invitation patients</li>
                 </ul>
-                <button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%; padding:16px;">Rejoindre en tant que professionnel</button>
+                <button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%;">Rejoindre en tant que professionnel</button>
             </div>
 
         </div>
-
-        <p style="text-align:center; margin-top:40px; color:#AAA;">
-            ✅ Essai gratuit pendant la bêta • Résiliation à tout moment • Données chiffrées et conformes RGPD
-        </p>
     </div>
 
     <!-- FORMULAIRE -->
     <div class="section" id="formulaire">
         <h2>Rejoignez la bêta du 18 mai</h2>
-        <p style="text-align:center; max-width:700px; margin:auto;">
-            Accès immédiat via prototype web sécurisé.<br>
-            Vos retours nous aideront à améliorer Sana-e rapidement.
-        </p>
+        <p style="text-align:center;">Accès via prototype web sécurisé</p>
 
         <form id="form" style="max-width:600px; margin:40px auto 0;">
-            <input type="text" name="name" placeholder="Votre nom complet" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;">
-            <input type="email" name="email" placeholder="Votre adresse email" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;">
-            
-            <select name="profil" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;">
+            <input type="text" name="name" placeholder="Votre nom complet" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white;">
+            <input type="email" name="email" placeholder="Votre email" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white;">
+            <select name="profil" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white;">
                 <option value="">Vous êtes ?</option>
                 <option value="patient">Patient / Utilisateur</option>
                 <option value="pro">Professionnel de santé</option>
             </select>
+            <textarea name="message" placeholder="Pourquoi souhaitez-vous rejoindre la bêta ?" rows="4" required style="width:100%; padding:15px; margin:15px 0; background:#1A1A1A; border:none; border-radius:10px; color:white;"></textarea>
             
-            <textarea name="message" placeholder="Pourquoi souhaitez-vous rejoindre la bêta ?" rows="4" required style="width:100%; padding:15px; margin:15px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;"></textarea>
-            
-            <label style="display:block; margin:20px 0; font-size:1.05rem;">
+            <label style="display:block; margin:20px 0;">
                 <input type="checkbox" required> J’accepte la politique de confidentialité
             </label>
             
-            <button type="submit" class="cta-button" style="width:100%; padding:18px;">Envoyer ma demande d’accès à la bêta</button>
+            <button type="submit" class="cta-button" style="width:100%; padding:18px;">Envoyer ma demande d’accès</button>
         </form>
 
         <p id="success" style="display:none; color:#2ECC71; text-align:center; margin-top:30px; font-size:1.2rem; font-weight:bold;">
-            ✅ Merci ! Votre demande a été envoyée.<br>Nous vous contacterons très rapidement pour vous donner accès à la bêta.
+            ✅ Merci ! Votre demande a été envoyée.
         </p>
     </div>
-
-    <footer>
-        © 2026 SanaTech – Sana-e • 
-        <a href="#" style="color:#2ECC71; text-decoration:none;">Mentions légales</a> • 
-        <a href="#" style="color:#2ECC71; text-decoration:none;">Politique de confidentialité</a>
-    </footer>
 
 </div>
 
@@ -236,8 +208,6 @@ document.getElementById("form").addEventListener("submit", function(e) {
     }).then(() => {
         document.getElementById("success").style.display = "block";
         this.reset();
-    }).catch(() => {
-        alert("Une erreur est survenue. Veuillez réessayer.");
     });
 });
 </script>
