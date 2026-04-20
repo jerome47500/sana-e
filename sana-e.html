@@ -1,262 +1,246 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana-e – Suivi intelligent de la santé mentale</title>
+    <style>
+        :root {
+            --primary: #00B4D8;
+            --accent: #2ECC71;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0F0F0F;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 3.4rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            color: transparent;
+            margin: 0 0 12px 0;
+        }
+        .subtitle {
+            font-size: 1.45rem;
+            color: #CFCFCF;
+            margin-bottom: 40px;
+        }
+        .badge {
+            background: var(--accent);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        .cta-button {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
+        }
+        .section {
+            margin: 90px 0;
+        }
+        h2 {
+            font-size: 2.4rem;
+            color: #E0E0E0;
+            margin-bottom: 25px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .pricing-card {
+            background: #1A1A1A;
+            padding: 40px 30px;
+            border-radius: 18px;
+            border: 1px solid #2A2A2A;
+            text-align: center;
+        }
+        .pricing-card.popular {
+            border: 3px solid var(--accent);
+            position: relative;
+            transform: scale(1.03);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: #000;
+            padding: 8px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0 8px;
+        }
+        .features-list {
+            text-align: left;
+            margin: 30px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #2A2A2A;
+        }
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            color: #777;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="fr"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Sana-e – Suivi intelligent de la santé mentale&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--primary: #00B4D8;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent: #2ECC71;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', system-ui, -apple-system, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #0F0F0F;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #FFFFFF;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1100px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, var(--primary), var(--accent));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 0 12px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.subtitle {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.45rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #CFCFCF;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.badge {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #000;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta-button {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, var(--primary), var(--accent));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 18px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta-button:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 90px 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #E0E0E0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.pricing-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.pricing-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #1A1A1A;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #2A2A2A;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.pricing-card.popular {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 3px solid var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.03);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.popular-badge {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: -14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(-50%);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #000;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 25px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.price {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 800;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.features-list {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 30px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.features-list li {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #2A2A2A;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 60px 0 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #777;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="container"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- HERO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Sana-e&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="subtitle"&gt;Suivez votre santé mentale comme on suit sa santé physique.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="badge"&gt;🚀 Lancement officiel de la bêta le 18 mai 2026&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="font-size:1.3rem; max-width:750px; margin:35px auto;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Transformez vos ressentis quotidiens en &lt;strong&gt;score global&lt;/strong&gt;, tendances, alertes et rapports intelligents —<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>pour vous et pour votre thérapeute.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="document.getElementById('tarification').scrollIntoView({behavior: 'smooth'})" class="cta-button"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Voir les tarifs et rejoindre la bêta</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- TARIFICATION --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section" id="tarification"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Une tarification simple et transparente&lt;/h2&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pricing-grid"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Patient --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="pricing-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Pour les patients&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;12,99 €&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="color:#2ECC71; font-weight:bold;"&gt;ou 119 € / an (soit ~9,92 €/mois)&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="features-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Suivi quotidien (humeur, stress, sommeil, énergie)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Score global de santé mentale&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Courbes d’évolution et tendances&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Recommandations IA légère&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Historique illimité&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Sans publicité&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%; padding:16px;"&gt;Rejoindre en tant que patient&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Professionnel --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="pricing-card popular"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="popular-badge"&gt;Recommandé&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Pour les professionnels&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="price"&gt;49,99 €&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="margin-bottom:30px;"&gt;par mois&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="features-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Dashboard complet multi-patients&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Alertes précoces et IA légère&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Rapports automatiques avant consultation&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Suivi longitudinal détaillé&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Code d’invitation patients sécurisé&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;✓ Gain de temps en consultation&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%; padding:16px;"&gt;Rejoindre en tant que professionnel&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="text-align:center; margin-top:40px; color:#AAA;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>✅ Essai gratuit pendant la bêta • Résiliation à tout moment • Données chiffrées et conformes RGPD</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- FORMULAIRE --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section" id="formulaire"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Rejoignez la bêta du 18 mai&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="text-align:center; max-width:700px; margin:auto;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>Accès immédiat via prototype web sécurisé.&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>Vos retours nous aideront à améliorer Sana-e rapidement.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;form id="form" style="max-width:600px; margin:40px auto 0;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" name="name" placeholder="Votre nom complet" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="email" name="email" placeholder="Votre adresse email" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;select name="profil" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value=""&gt;Vous êtes ?&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="patient"&gt;Patient / Utilisateur&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="pro"&gt;Professionnel de santé&lt;/option&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/select&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;textarea name="message" placeholder="Pourquoi souhaitez-vous rejoindre la bêta ?" rows="4" required style="width:100%; padding:15px; margin:15px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;"&gt;&lt;/textarea&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label style="display:block; margin:20px 0; font-size:1.05rem;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="checkbox" required&gt; J’accepte la politique de confidentialité</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button type="submit" class="cta-button" style="width:100%; padding:18px;"&gt;Envoyer ma demande d’accès à la bêta&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/form&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p id="success" style="display:none; color:#2ECC71; text-align:center; margin-top:30px; font-size:1.2rem; font-weight:bold;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>✅ Merci ! Votre demande a été envoyée.&lt;br&gt;Nous vous contacterons très rapidement pour vous donner accès à la bêta.</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>© 2026 SanaTech – Sana-e •<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" style="color:#2ECC71; text-decoration:none;"&gt;Mentions légales&lt;/a&gt; •<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" style="color:#2ECC71; text-decoration:none;"&gt;Politique de confidentialité&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">document.getElementById("form").addEventListener("submit", function(e) {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>fetch("https://formspree.io/f/mykledld", {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>method: "POST",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body: new FormData(this),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>headers: { 'Accept': 'application/json' }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}).then(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("success").style.display = "block";</p>
-<p class="p1"><span class="Apple-converted-space">        </span>this.reset();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}).catch(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>alert("Une erreur est survenue. Veuillez réessayer.");</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1">});</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<div class="container">
+
+    <!-- HERO -->
+    <h1>Sana-e</h1>
+    <p class="subtitle">Suivez votre santé mentale comme on suit sa santé physique.</p>
+    
+    <div class="badge">🚀 Lancement officiel de la bêta le 18 mai 2026</div>
+
+    <p style="font-size:1.3rem; max-width:750px; margin:35px auto;">
+        Transformez vos ressentis quotidiens en <strong>score global</strong>, tendances, alertes et rapports intelligents — 
+        pour vous et pour votre thérapeute.
+    </p>
+
+    <button onclick="document.getElementById('tarification').scrollIntoView({behavior: 'smooth'})" class="cta-button">
+        Voir les tarifs et rejoindre la bêta
+    </button>
+
+    <!-- TARIFICATION -->
+    <div class="section" id="tarification">
+        <h2>Une tarification simple et transparente</h2>
+
+        <div class="pricing-grid">
+
+            <!-- Patient -->
+            <div class="pricing-card">
+                <h3>Pour les patients</h3>
+                <div class="price">12,99 €</div>
+                <p style="color:#2ECC71; font-weight:bold;">ou 119 € / an (soit ~9,92 €/mois)</p>
+                
+                <ul class="features-list">
+                    <li>✓ Suivi quotidien (humeur, stress, sommeil, énergie)</li>
+                    <li>✓ Score global de santé mentale</li>
+                    <li>✓ Courbes d’évolution et tendances</li>
+                    <li>✓ Recommandations IA légère</li>
+                    <li>✓ Historique illimité</li>
+                    <li>✓ Sans publicité</li>
+                </ul>
+                <button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%; padding:16px;">Rejoindre en tant que patient</button>
+            </div>
+
+            <!-- Professionnel -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">Recommandé</div>
+                <h3>Pour les professionnels</h3>
+                <div class="price">49,99 €</div>
+                <p style="margin-bottom:30px;">par mois</p>
+                
+                <ul class="features-list">
+                    <li>✓ Dashboard complet multi-patients</li>
+                    <li>✓ Alertes précoces et IA légère</li>
+                    <li>✓ Rapports automatiques avant consultation</li>
+                    <li>✓ Suivi longitudinal détaillé</li>
+                    <li>✓ Code d’invitation patients sécurisé</li>
+                    <li>✓ Gain de temps en consultation</li>
+                </ul>
+                <button onclick="document.getElementById('formulaire').scrollIntoView({behavior: 'smooth'})" class="cta-button" style="width:100%; padding:16px;">Rejoindre en tant que professionnel</button>
+            </div>
+
+        </div>
+
+        <p style="text-align:center; margin-top:40px; color:#AAA;">
+            ✅ Essai gratuit pendant la bêta • Résiliation à tout moment • Données chiffrées et conformes RGPD
+        </p>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class="section" id="formulaire">
+        <h2>Rejoignez la bêta du 18 mai</h2>
+        <p style="text-align:center; max-width:700px; margin:auto;">
+            Accès immédiat via prototype web sécurisé.<br>
+            Vos retours nous aideront à améliorer Sana-e rapidement.
+        </p>
+
+        <form id="form" style="max-width:600px; margin:40px auto 0;">
+            <input type="text" name="name" placeholder="Votre nom complet" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;">
+            <input type="email" name="email" placeholder="Votre adresse email" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;">
+            
+            <select name="profil" required style="width:100%; padding:15px; margin:12px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;">
+                <option value="">Vous êtes ?</option>
+                <option value="patient">Patient / Utilisateur</option>
+                <option value="pro">Professionnel de santé</option>
+            </select>
+            
+            <textarea name="message" placeholder="Pourquoi souhaitez-vous rejoindre la bêta ?" rows="4" required style="width:100%; padding:15px; margin:15px 0; background:#1A1A1A; border:none; border-radius:10px; color:white; font-size:1.05rem;"></textarea>
+            
+            <label style="display:block; margin:20px 0; font-size:1.05rem;">
+                <input type="checkbox" required> J’accepte la politique de confidentialité
+            </label>
+            
+            <button type="submit" class="cta-button" style="width:100%; padding:18px;">Envoyer ma demande d’accès à la bêta</button>
+        </form>
+
+        <p id="success" style="display:none; color:#2ECC71; text-align:center; margin-top:30px; font-size:1.2rem; font-weight:bold;">
+            ✅ Merci ! Votre demande a été envoyée.<br>Nous vous contacterons très rapidement pour vous donner accès à la bêta.
+        </p>
+    </div>
+
+    <footer>
+        © 2026 SanaTech – Sana-e • 
+        <a href="#" style="color:#2ECC71; text-decoration:none;">Mentions légales</a> • 
+        <a href="#" style="color:#2ECC71; text-decoration:none;">Politique de confidentialité</a>
+    </footer>
+
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    fetch("https://formspree.io/f/mykledld", {
+        method: "POST",
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+    }).then(() => {
+        document.getElementById("success").style.display = "block";
+        this.reset();
+    }).catch(() => {
+        alert("Une erreur est survenue. Veuillez réessayer.");
+    });
+});
+</script>
+
 </body>
 </html>
