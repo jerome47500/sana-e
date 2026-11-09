@@ -941,32 +941,41 @@
         <p>Demandez une étude de besoins gratuite. Nous analysons ensemble le périmètre technique et fonctionnel et vous proposons une proposition adaptée.</p>
       </div>
 
-      <form class="form-card" onsubmit="event.preventDefault(); alert('Merci ! Votre demande a bien été enregistrée. Nous vous recontacterons rapidement.');">
+      <!-- 
+        IMPORTANT : Remplace TON-EMAIL@exemple.com par ton vrai email
+        Exemple : action="https://formsubmit.co/contact@sanatech.fr"
+      -->
+      <form class="form-card" action="https://formsubmit.co/contact@sanatech.fr" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle demande Sana-e - Étude de besoins">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://sanatech.fr/#contact">
+
         <div class="form-row">
           <div class="form-group">
             <label>Prénom *</label>
-            <input type="text" required placeholder="Jean">
+            <input type="text" name="prenom" required placeholder="Jean">
           </div>
           <div class="form-group">
             <label>Nom *</label>
-            <input type="text" required placeholder="Dupont">
+            <input type="text" name="nom" required placeholder="Dupont">
           </div>
         </div>
         <div class="form-group">
           <label>Email professionnel *</label>
-          <input type="email" required placeholder="jean.dupont@entreprise.fr">
+          <input type="email" name="email" required placeholder="jean.dupont@entreprise.fr">
         </div>
         <div class="form-group">
           <label>Organisation *</label>
-          <input type="text" required placeholder="Nom de votre structure">
+          <input type="text" name="organisation" required placeholder="Nom de votre structure">
         </div>
         <div class="form-group">
           <label>Rôle / Fonction</label>
-          <input type="text" placeholder="CTO, Product, Directeur digital…">
+          <input type="text" name="role" placeholder="CTO, Product, Directeur digital…">
         </div>
         <div class="form-group">
           <label>Message (optionnel)</label>
-          <textarea placeholder="Décrivez brièvement votre besoin ou votre solution existante…"></textarea>
+          <textarea name="message" placeholder="Décrivez brièvement votre besoin ou votre solution existante…"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-lg form-submit">Demander une étude de besoins</button>
         <p class="form-legal">En envoyant ce formulaire, vous acceptez d’être recontacté dans le cadre de votre demande.</p>
