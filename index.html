@@ -1,992 +1,990 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SanaTech | Sana-e</title>
-  <meta
-    name="description"
-    content="SanaTech développe Sana-e, une plateforme de santé mentale intelligente pensée pour les patients et les thérapeutes."
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sana-e — Brique technologique de suivi de la santé mentale | Intégration & Licence</title>
+  <meta name="description" content="Sana-e : brique technologique de suivi longitudinal de la santé mentale, intégrable à votre solution numérique existante. Licence d'exploitation, personnalisation et déploiement sur votre infrastructure.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0b0f19;
-      --bg-soft: #121827;
-      --card: #111827;
-      --card-2: #0f172a;
-      --text: #ffffff;
-      --muted: #b8c1d1;
-      --border: rgba(255, 255, 255, 0.10);
-      --blue: #0a2540;
-      --blue-2: #00b4d8;
-      --green: #2ecc71;
-      --white: #ffffff;
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --max-width: 1180px;
+      --blue: #0A2540;
+      --green: #2ECC71;
+      --white: #FFFFFF;
+      --black: #1A1A1A;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    body {
+      font-family: 'Open Sans', system-ui, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(46, 204, 113, 0.08), transparent 28%),
-        radial-gradient(circle at top right, rgba(10, 37, 64, 0.35), transparent 30%),
-        linear-gradient(180deg, #0a0e17 0%, #0b0f19 100%);
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-weight: 700;
+      line-height: 1.25;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
-    .wrap {
-      max-width: var(--max-width);
+    .container {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
+    /* ========== NAV ========== */
     .nav {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px);
-      background: rgba(11, 15, 25, 0.78);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--gray-200);
     }
 
     .nav-inner {
-      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      height: 64px;
     }
 
-    .brand {
+    .logo {
       display: flex;
-      flex-direction: column;
-      gap: 3px;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--blue);
     }
 
-    .brand-title {
-      font-size: 28px;
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
       font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-sub {
-      color: var(--muted);
-      font-size: 13px;
+      font-size: 0.9rem;
     }
 
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: none;
+      gap: 32px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-600);
     }
 
     .nav-links a:hover {
-      color: var(--white);
-    }
-
-    .nav-cta {
-      padding: 12px 16px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--blue), #14395c);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      color: var(--white);
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-
-    section {
-      padding: 88px 0;
-    }
-
-    .hero {
-      min-height: calc(100vh - 78px);
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: center;
-      padding-top: 52px;
-      padding-bottom: 52px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(46, 204, 113, 0.12);
-      color: #a4f2c5;
-      font-weight: 700;
-      font-size: 13px;
-      border: 1px solid rgba(46, 204, 113, 0.25);
-      margin-bottom: 18px;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      letter-spacing: -0.03em;
-    }
-
-    h1 {
-      font-size: 54px;
-      line-height: 1.05;
-      margin-bottom: 18px;
-    }
-
-    .accent {
-      color: var(--green);
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 19px;
-      line-height: 1.75;
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      color: var(--blue);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 18px;
-      border-radius: var(--radius-md);
-      font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .btn:hover,
-    .pricing-btn:hover,
-    .nav-cta:hover,
-    .submit-btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--blue), #14395c);
-      color: var(--white);
-      box-shadow: var(--shadow);
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #071a2e;
+      transform: translateY(-1px);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--white);
+      background: transparent;
+      color: white;
+      border: 1.5px solid rgba(255,255,255,0.4);
     }
 
-    .hero-card,
-    .card,
-    .faq,
-    .trust,
-    .contact-card,
-    .contact-info {
-      background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(11, 15, 25, 0.96));
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
     }
 
-    .hero-card {
-      padding: 28px;
-      border-radius: var(--radius-xl);
+    .btn-green {
+      background: var(--green);
+      color: white;
     }
 
-    .hero-card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 22px;
+    .btn-green:hover {
+      background: #27ae60;
     }
 
-    .mini-card {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .btn-lg {
+      padding: 14px 28px;
+      font-size: 1rem;
+      border-radius: 12px;
     }
 
-    .mini-card div {
-      color: var(--muted);
-      font-size: 14px;
+    /* ========== HERO ========== */
+    .hero {
+      background: var(--blue);
+      color: white;
+      padding: 80px 0 90px;
     }
 
-    .mini-card strong {
-      display: block;
-      font-size: 28px;
-      margin-top: 6px;
-    }
-
-    .section-title {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.75;
-      max-width: 780px;
-      margin-bottom: 34px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      border-radius: 24px;
-      padding: 24px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 16px;
-    }
-
-    .features ul,
-    .pricing-card ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .pricing-wrap {
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .pricing-card {
-      border-radius: var(--radius-xl);
-      padding: 28px;
-      color: var(--white);
-      box-shadow: var(--shadow);
-      min-height: 560px;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-card::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      right: -30px;
-      width: 150px;
-      height: 150px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 50%;
-    }
-
-    .free {
-      background: linear-gradient(160deg, var(--blue), #14395c);
-    }
-
-    .premium {
-      background: linear-gradient(160deg, var(--blue), rgba(46, 204, 113, 0.88));
-      transform: translateY(-10px);
-    }
-
-    .pro {
-      background: linear-gradient(160deg, var(--blue), #1b3e63);
-    }
-
-    .badge {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 8px 12px;
+      background: rgba(255,255,255,0.1);
+      padding: 6px 14px;
       border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      width: fit-content;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 24px;
     }
 
-    .highlight {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: #ffffff;
-      color: #0a2540;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
+    .hero-badge span {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 800;
+      max-width: 780px;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
     }
 
-    .pricing-card h3 {
-      font-size: 28px;
-      line-height: 1.2;
+    .hero p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      max-width: 620px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    /* ========== VALUE ========== */
+    .value {
+      padding: 70px 0;
+      background: white;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .value-item {
+      text-align: center;
+    }
+
+    .value-icon {
+      width: 52px;
+      height: 52px;
+      background: #E8F8F0;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.4rem;
+    }
+
+    .value-item h3 {
+      font-size: 1.15rem;
       margin-bottom: 8px;
+      color: var(--blue);
     }
 
-    .price {
-      font-size: 40px;
-      font-weight: 800;
+    .value-item p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+    }
+
+    /* ========== OFFER ========== */
+    .offer {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--blue);
       margin-bottom: 12px;
     }
 
-    .desc {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      opacity: 0.95;
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 560px;
+      margin: 0 auto;
     }
 
-    .pricing-card li {
-      margin: 12px 0;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.92);
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
 
-    .spacer {
-      flex: 1;
+    .offer-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--gray-200);
+      transition: all 0.25s ease;
     }
 
-    .pricing-btn {
-      display: inline-flex;
+    .offer-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(10, 37, 64, 0.08);
+    }
+
+    .offer-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+
+    .offer-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--green);
+    }
+
+    .offer-card h3 {
+      font-size: 1.2rem;
+      color: var(--blue);
+      margin-top: 4px;
+    }
+
+    .offer-price {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .offer-price .amount {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--blue);
+    }
+
+    .offer-price .period {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+    }
+
+    .offer-card ul {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .offer-card li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--gray-700);
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+
+    .offer-card li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .offer-note {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-style: italic;
+    }
+
+    /* Maintenance table style */
+    .maint-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 0.95rem;
+    }
+
+    .maint-row:last-child {
+      border-bottom: none;
+    }
+
+    .maint-row .price {
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    /* ========== ARCHITECTURE ========== */
+    .architecture {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .tech-item {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .tech-item .name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+
+    .tech-item .desc {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .arch-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .arch-box h3 {
+      color: var(--blue);
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .arch-box p {
+      color: var(--gray-700);
+      margin-bottom: 12px;
+    }
+
+    .arch-box p:last-child {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      color: var(--gray-600);
+    }
+
+    /* ========== PROCESS ========== */
+    .process {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .process-step {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .process-num {
+      width: 36px;
+      height: 36px;
+      background: var(--blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      padding: 15px 18px;
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.14);
-      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(6px);
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      margin: 0 auto 12px;
     }
 
-    .faq,
-    .trust {
-      margin-top: 22px;
-      border-radius: var(--radius-xl);
-      padding: 30px;
+    .process-step h4 {
+      font-size: 0.95rem;
+      color: var(--blue);
+      margin-bottom: 4px;
     }
 
-    .trust {
-      text-align: center;
-      font-weight: 700;
-      color: #d7dfec;
+    .process-step p {
+      font-size: 0.8rem;
+      color: var(--gray-500);
     }
 
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 26px;
+    /* ========== FAQ ========== */
+    .faq {
+      padding: 80px 0;
+      background: white;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
-      align-items: start;
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    .contact-info,
-    .contact-card {
-      border-radius: var(--radius-xl);
-      padding: 30px;
+    details {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
     }
 
-    .contact-info h3,
-    .contact-card h3 {
-      font-size: 24px;
-      margin-bottom: 14px;
+    details[open] {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
     }
 
-    .contact-info p,
-    .contact-card p {
-      color: var(--muted);
-      line-height: 1.75;
-      margin-top: 0;
+    summary {
+      padding: 18px 22px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--blue);
     }
 
-    .contact-points {
-      display: grid;
-      gap: 16px;
-      margin-top: 24px;
+    summary::-webkit-details-marker {
+      display: none;
     }
 
-    .contact-point {
-      padding: 18px;
+    summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details .content {
+      padding: 0 22px 18px;
+      font-size: 0.95rem;
+      color: var(--gray-600);
+    }
+
+    /* ========== CONTACT ========== */
+    .contact {
+      padding: 80px 0;
+      background: var(--blue);
+      color: white;
+    }
+
+    .contact .section-header h2 {
+      color: white;
+    }
+
+    .contact .section-header p {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .form-card {
+      background: white;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .contact-point strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    form {
-      display: grid;
-      gap: 16px;
-      margin-top: 18px;
+      padding: 36px;
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--black);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
+      margin-bottom: 14px;
     }
 
-    label {
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
       display: block;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #e8edf7;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 6px;
     }
 
-    input,
-    select,
-    textarea {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--white);
-      border-radius: 14px;
-      padding: 14px 14px;
-      font-size: 15px;
+      padding: 11px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
       outline: none;
-      transition: border-color 0.2s ease, background 0.2s ease;
     }
 
-    input::placeholder,
-    textarea::placeholder {
-      color: #93a3b8;
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: rgba(0, 180, 216, 0.9);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    textarea {
-      min-height: 150px;
+    .form-group textarea {
       resize: vertical;
+      min-height: 90px;
     }
 
-    .form-note {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-      margin: 0;
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
     }
 
-    .submit-btn {
-      border: none;
-      cursor: pointer;
-      padding: 15px 18px;
-      border-radius: 16px;
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    #form-status {
-      display: none;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer {
-      padding: 34px 0 54px;
-      color: #95a3b8;
+    .form-legal {
+      font-size: 0.75rem;
+      color: var(--gray-500);
       text-align: center;
-      font-size: 14px;
-      line-height: 1.8;
+      margin-top: 14px;
     }
 
-    .footer a {
-      color: #d7dfec;
+    /* ========== FOOTER ========== */
+    .footer {
+      background: #071a2e;
+      color: rgba(255,255,255,0.6);
+      padding: 40px 0;
+      text-align: center;
     }
 
-    .footer a:hover {
-      color: var(--white);
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
     }
 
-    @media (max-width: 980px) {
-      .hero,
-      .split,
-      .grid-3,
-      .pricing-wrap,
-      .faq-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+    .footer p {
+      font-size: 0.85rem;
+    }
 
-      .premium {
-        transform: none;
-      }
+    .footer .small {
+      font-size: 0.75rem;
+      margin-top: 16px;
+      opacity: 0.5;
+    }
 
-      .nav-inner {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 14px 0;
-      }
-
+    /* ========== RESPONSIVE ========== */
+    @media (min-width: 768px) {
       .nav-links {
-        justify-content: center;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-
-      .section-title {
-        font-size: 31px;
+        display: flex;
       }
     }
 
-    @media (max-width: 640px) {
-      .hero-card-grid,
+    @media (max-width: 600px) {
       .form-row {
         grid-template-columns: 1fr;
       }
-
-      .brand-title {
-        font-size: 24px;
+      .hero {
+        padding: 60px 0 70px;
       }
-
-      .wrap {
-        padding: 0 18px;
+      .offer-card-header {
+        flex-direction: column;
       }
-
-      .contact-info,
-      .contact-card,
-      .hero-card,
-      .card,
-      .faq,
-      .trust {
-        padding: 22px;
+      .offer-price {
+        text-align: left;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <div class="brand">
-        <div class="brand-title">Sana-e</div>
-        <div class="brand-sub">Plateforme de santé mentale intelligente</div>
-      </div>
 
-      <div class="nav-links">
-        <a href="#sanatech">SanaTech</a>
-        <a href="#sanae">Sana-e</a>
-        <a href="#pricing">Tarifs</a>
-        <a href="#contact" class="nav-cta">Demander une démo</a>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <div class="logo-mark">S</div>
+        Sana-e
       </div>
+      <div class="nav-links">
+        <a href="#offre">Offre</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#processus">Processus</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#contact" class="btn btn-primary">Étude de besoins</a>
     </div>
   </nav>
 
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div>
-        <div class="eyebrow">HealthTech • Suivi longitudinal • Assistant thérapeute</div>
-        <h1>La santé mentale,<br><span class="accent">mieux suivie</span>, mieux comprise.</h1>
-        <p class="lead">
-          Sana-e est une plateforme de santé mentale intelligente conçue par SanaTech
-          pour transformer les données quotidiennes en indicateurs utiles, améliorer
-          le suivi entre les consultations et aider les patients comme les thérapeutes
-          à prendre de meilleures décisions.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#pricing">Voir les tarifs</a>
-          <a class="btn btn-secondary" href="#sanae">Découvrir la plateforme</a>
-          <a class="btn btn-primary" href="/sana-e.html">Accéder à Sana-e (Bêta)</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span></span>
+        Brique technologique • Licence d'exploitation
       </div>
-
-      <div class="hero-card">
-        <h3>En une phrase</h3>
-        <p>
-          Sana-e permet de suivre la santé mentale comme on suit sa santé physique,
-          avec un score global, des tendances, des alertes et des rapports utiles
-          pour le patient et le thérapeute.
-        </p>
-
-        <div class="hero-card-grid">
-          <div class="mini-card">
-            <div>Suivi patient</div>
-            <strong>24/7</strong>
-          </div>
-          <div class="mini-card">
-            <div>Analyse & IA</div>
-            <strong>Actionnable</strong>
-          </div>
-          <div class="mini-card">
-            <div>Usage pro</div>
-            <strong>Dashboard</strong>
-          </div>
-          <div class="mini-card">
-            <div>Confiance</div>
-            <strong>RGPD</strong>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sanatech">
-      <h2 class="section-title">SanaTech</h2>
-      <p class="section-sub">
-        SanaTech développe des solutions numériques au service de la santé mentale.
-        L’ambition de l’entreprise est claire : utiliser la technologie pour mieux
-        comprendre, mieux connecter et mieux accompagner les parcours de bien-être psychologique.
+      <h1>Enrichissez votre parcours patient avec un suivi de la santé mentale professionnel</h1>
+      <p>
+        Sana-e est une brique technologique de suivi longitudinal de la santé mentale, conçue pour s’intégrer à votre solution numérique existante — sans avoir à tout reconstruire en interne.
       </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Innover</h3>
-          <p>
-            Créer des outils simples, lisibles et modernes, pensés pour un usage réel,
-            aussi bien côté patient que côté professionnel.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Connecter</h3>
-          <p>
-            Créer un lien intelligent entre le suivi personnel et l’accompagnement
-            thérapeutique grâce à la donnée, aux indicateurs et à l’analyse.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Impacter</h3>
-          <p>
-            Permettre une meilleure compréhension de la santé mentale entre les consultations
-            et renforcer la prévention par un suivi longitudinal utile.
-          </p>
-        </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-green btn-lg">Demander une étude de besoins</a>
+        <a href="#architecture" class="btn btn-secondary btn-lg">Voir l’architecture</a>
       </div>
-    </section>
-
-    <section id="sanae">
-      <h2 class="section-title">Sana-e</h2>
-      <p class="section-sub">
-        Une plateforme de suivi de la santé mentale pour les patients et les thérapeutes,
-        conçue pour collecter, analyser et transformer des données quotidiennes en
-        informations claires et utiles.
+      <p class="hero-note">
+        Déploiement possible sur votre infrastructure • Personnalisation visuelle & UX • Propriété intellectuelle conservée par l’éditeur
       </p>
-
-      <div class="split">
-        <div class="card features">
-          <h3>Côté patient</h3>
-          <ul>
-            <li>Suivi quotidien : humeur, stress, sommeil, énergie</li>
-            <li>Score global de bien-être</li>
-            <li>Analyse des tendances sur 7, 14 et 30 jours</li>
-            <li>Notifications intelligentes et recommandations IA</li>
-            <li>Vision claire de son évolution personnelle</li>
-          </ul>
-        </div>
-
-        <div class="card features">
-          <h3>Côté thérapeute</h3>
-          <ul>
-            <li>Dashboard professionnel complet</li>
-            <li>Suivi longitudinal des patients</li>
-            <li>Analyse automatique, alertes et signaux cliniques</li>
-            <li>Rapports envoyés avant consultation</li>
-            <li>Assistant thérapeute intelligent et aide à la décision</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION TARIFICATION MISE À JOUR -->
-    <section id="pricing">
-      <h2 class="section-title">Tarification</h2>
-      <p class="section-sub">
-        Des offres simples, adaptées à chaque usage, avec un positionnement premium
-        cohérent avec la valeur de Sana-e.
-      </p>
-
-      <div class="pricing-wrap">
-        <article class="pricing-card free">
-          <span class="badge">Patient</span>
-          <h3>Gratuit</h3>
-          <div class="price">0€ / mois</div>
-          <p class="desc">Découvrir Sana-e et suivre son bien-être au quotidien.</p>
-          <ul>
-            <li>Suivi quotidien : humeur, stress, sommeil</li>
-            <li>Score de bien-être simplifié</li>
-            <li>Historique limité</li>
-            <li>Fonctionnalités de base</li>
-            <li>Publicités intégrées</li>
-          </ul>
-          <div class="spacer"></div>
-          <a href="/sana-e.html" class="pricing-btn">Commencer gratuitement</a>
-        </article>
-
-        <article class="pricing-card premium">
-          <div class="highlight">Le plus populaire</div>
-          <span class="badge">Patient Premium</span>
-          <h3>Suivi personnel intelligent</h3>
-          <div class="price">12,99€ / mois</div>
-          <p class="desc">
-            ou <strong>119 € / an</strong> (soit ~9,92 €/mois)
-          </p>
-          <ul>
-            <li>Score global de bien-être avancé</li>
-            <li>Analyse des tendances : 7, 14, 30 jours</li>
-            <li>Recommandations IA légère</li>
-            <li>Notifications intelligentes</li>
-            <li>Historique complet</li>
-            <li>Sans publicité</li>
-          </ul>
-          <div class="spacer"></div>
-          <a href="/sana-e.html" class="pricing-btn">Passer en Premium</a>
-        </article>
-
-        <article class="pricing-card pro">
-          <span class="badge">Professionnel</span>
-          <h3>Assistant thérapeute intelligent</h3>
-          <div class="price">49,99€ / mois</div>
-          <p class="desc">
-            Outil de suivi, assistant et aide à la décision pour améliorer la
-            compréhension du patient entre les consultations.
-          </p>
-          <ul>
-            <li>Dashboard professionnel complet</li>
-            <li>Alertes précoces et IA légère</li>
-            <li>Rapports 7, 14, 30 jours</li>
-            <li>Envoi automatique avant consultation</li>
-            <li>Gestion des patients et invitations</li>
-            <li>Gain de temps en consultation</li>
-          </ul>
-          <div class="spacer"></div>
-          <a href="/sana-e.html" class="pricing-btn">Essayer la version professionnelle</a>
-        </article>
-      </div>
-
-      <div class="faq">
-        <div class="faq-grid">
-          <div>
-            <h3>Pourquoi choisir Sana-e ?</h3>
-            <p>
-              Une meilleure compréhension de l’évolution du patient, un vrai suivi entre
-              les consultations, un gain de temps pour les professionnels et une approche
-              fondée sur la donnée et l’analyse.
-            </p>
-          </div>
-
-          <div>
-            <h3>Questions fréquentes</h3>
-            <p><strong>Puis-je tester gratuitement ?</strong><br>Oui, une version bêta est disponible pour découvrir Sana-e.</p>
-            <p><strong>Puis-je arrêter à tout moment ?</strong><br>Oui, sans engagement.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="trust">
-        Données chiffrées • Conformité RGPD • Pensé pour les professionnels de santé
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2 class="section-title">Prendre contact</h2>
-      <p class="section-sub">
-        Vous souhaitez découvrir Sana-e, échanger sur un partenariat, tester la solution
-        ou demander une démonstration ? Remplissez le formulaire ci-dessous.
-      </p>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Parlons de Sana-e</h3>
-          <p>
-            Nous accompagnons les professionnels et les structures qui souhaitent mieux
-            comprendre, suivre et valoriser les parcours de santé mentale grâce à la donnée,
-            au suivi longitudinal et à une expérience simple.
-          </p>
-
-          <div class="contact-points">
-            <div class="contact-point">
-              <strong>Démo produit</strong>
-              Présentation de la plateforme et des usages côté patient et thérapeute.
-            </div>
-
-            <div class="contact-point">
-              <strong>Partenariats</strong>
-              Échange autour d’un déploiement, d’une expérimentation ou d’une collaboration.
-            </div>
-
-            <div class="contact-point">
-              <strong>Version professionnelle</strong>
-              Découverte des fonctionnalités premium et du dashboard thérapeute.
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <h3>Formulaire de contact</h3>
-          <p>Complétez ce formulaire et nous reviendrons vers vous rapidement.</p>
-
-          <form id="contact-form">
-            <div class="form-row">
-              <div>
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-              </div>
-
-              <div>
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
-              </div>
-
-              <div>
-                <label for="telephone">Téléphone</label>
-                <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro">
-              </div>
-            </div>
-
-            <div>
-              <label for="profil">Vous êtes</label>
-              <select id="profil" name="profil" required>
-                <option value="">Sélectionnez votre profil</option>
-                <option value="patient">Patient</option>
-                <option value="therapeute">Thérapeute</option>
-                <option value="structure">Structure / cabinet / clinique</option>
-                <option value="partenaire">Partenaire</option>
-                <option value="investisseur">Investisseur</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="sujet">Sujet</label>
-              <input type="text" id="sujet" name="sujet" placeholder="Objet de votre demande" required>
-            </div>
-
-            <div>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Décrivez votre besoin, votre contexte ou votre demande de démo..." required></textarea>
-            </div>
-
-            <p class="form-note">
-              En envoyant ce formulaire, vous acceptez d’être recontacté dans le cadre de votre demande.
-              Pour en savoir plus, consultez notre
-              <a href="/confidentialite.html">politique de confidentialité</a>.
-            </p>
-
-            <button type="submit" class="submit-btn">Envoyer ma demande</button>
-            <p id="form-status"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>SanaTech • Sana-e • Plateforme de santé mentale intelligente</div>
-    <div>
-      <a href="/mentions-legales.html">Mentions légales</a> •
-      <a href="/confidentialite.html">Politique de confidentialité</a>
     </div>
-    <div>Contact : contact@sanatech.fr</div>
+  </section>
+
+  <!-- VALUE -->
+  <section class="value">
+    <div class="container">
+      <div class="value-grid">
+        <div class="value-item">
+          <div class="value-icon">⚡</div>
+          <h3>Accélération</h3>
+          <p>Mise à disposition immédiate d’un socle déjà conçu, documenté et maintenu.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🔒</div>
+          <h3>Maîtrise des données</h3>
+          <p>Possibilité de déploiement sur votre propre infrastructure et gouvernance des données.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🎨</div>
+          <h3>Personnalisation</h3>
+          <p>Identité visuelle, interfaces et parcours utilisateurs adaptés à votre marque.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRE -->
+  <section class="offer" id="offre">
+    <div class="container">
+      <div class="section-header">
+        <h2>Offre d’intégration et d’exploitation</h2>
+        <p>Une structure claire, transparente et adaptée aux partenariats technologiques durables.</p>
+      </div>
+
+      <div class="offer-grid">
+        <!-- 1. Droit initial -->
+        <div class="offer-card">
+          <div class="offer-card-header">
+            <div>
+              <div class="offer-label">1. Droit initial</div>
+              <h3>Intégration & exploitation</h3>
+            </div>
+            <div class="offer-price">
+              <div class="amount">15 000 €</div>
+              <div class="period">HT • paiement unique</div>
+            </div>
+          </div>
+          <ul>
+            <li>Mise à disposition de la technologie Sana-e</li>
+            <li>Droit d’intégrer dans votre solution (périmètre contractuel)</li>
+            <li>Droit d’exploitation dans le cadre de l’activité convenue</li>
+            <li>Accès au socle logiciel et documentation technique</li>
+            <li>Personnalisation de l’identité visuelle et de l’expérience utilisateur</li>
+          </ul>
+          <p class="offer-note">La propriété intellectuelle du socle reste celle de l’éditeur (licence d’exploitation, non cession).</p>
+        </div>
+
+        <!-- 2. Intégration -->
+        <div class="offer-card">
+          <div class="offer-card-header">
+            <div>
+              <div class="offer-label">2. Intégration</div>
+              <h3>Personnalisation & adaptation</h3>
+            </div>
+            <div class="offer-price">
+              <div class="amount">1 500 €</div>
+              <div class="period">HT / mois</div>
+            </div>
+          </div>
+          <p style="font-size:0.9rem; color:var(--gray-600); margin-bottom:12px;">Durée indicative : 3 à 6 mois • Enveloppe de 3 jours d’intervention / mois</p>
+          <ul>
+            <li>Étude des besoins fonctionnels et techniques</li>
+            <li>Adaptation à votre environnement numérique</li>
+            <li>Personnalisation des interfaces et parcours</li>
+            <li>Intégration des fonctionnalités de suivi</li>
+            <li>Tests et préparation à la mise en production</li>
+          </ul>
+          <p class="offer-note">Journées supplémentaires : 500 € HT / jour (sur accord préalable)</p>
+        </div>
+
+        <!-- 3. Licence -->
+        <div class="offer-card">
+          <div class="offer-card-header">
+            <div>
+              <div class="offer-label">3. Licence</div>
+              <h3>Exploitation mensuelle</h3>
+            </div>
+            <div class="offer-price">
+              <div class="amount">1 500 €</div>
+              <div class="period">HT / mois</div>
+            </div>
+          </div>
+          <p style="font-size:0.9rem; color:var(--gray-600); margin-bottom:12px;">À compter de la mise en production</p>
+          <ul>
+            <li>Droit d’utilisation dans le périmètre contractuel</li>
+            <li>Exploitation intégrée à votre parcours numérique</li>
+            <li>Maintien de l’accès au socle logiciel</li>
+            <li>Évolutions générales incluses dans le périmètre de licence</li>
+          </ul>
+        </div>
+
+        <!-- 4. Maintenance -->
+        <div class="offer-card">
+          <div class="offer-card-header">
+            <div>
+              <div class="offer-label">4. Maintenance & support</div>
+              <h3>Contrat distinct — 3 formules</h3>
+            </div>
+          </div>
+          <div class="maint-row">
+            <span>Essentielle</span>
+            <span class="price">350 € HT/mois</span>
+          </div>
+          <div class="maint-row">
+            <span>Standard</span>
+            <span class="price">550 € HT/mois</span>
+          </div>
+          <div class="maint-row">
+            <span>Premium</span>
+            <span class="price">850 € HT/mois</span>
+          </div>
+          <p class="offer-note">Nouvelles fonctionnalités majeures et développements spécifiques hors périmètre sur devis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="architecture" id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <h2>Architecture & déploiement</h2>
+        <p>Un socle technologique indépendant, pensé pour s’intégrer proprement dans votre environnement.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="name">React / Vite</div>
+          <div class="desc">Frontend moderne</div>
+        </div>
+        <div class="tech-item">
+          <div class="name">Node.js</div>
+          <div class="desc">Backend</div>
+        </div>
+        <div class="tech-item">
+          <div class="name">PostgreSQL</div>
+          <div class="desc">Base de données</div>
+        </div>
+        <div class="tech-item">
+          <div class="name">PWA</div>
+          <div class="desc">Compatible</div>
+        </div>
+      </div>
+
+      <div class="arch-box">
+        <h3>Déploiement sur votre infrastructure</h3>
+        <p>
+          Sana-e peut être déployé dans l’environnement d’exploitation du partenaire. Vous conservez la maîtrise de l’hébergement, de la sécurité, des sauvegardes et de la gouvernance des données.
+        </p>
+        <p>
+          Les responsabilités respectives relatives à l’hébergement, à la sécurité, aux données personnelles et aux obligations réglementaires sont définies contractuellement avant la mise en production.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSUS -->
+  <section class="process" id="processus">
+    <div class="container">
+      <div class="section-header">
+        <h2>Comment se déroule un partenariat</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <h4>Découverte</h4>
+          <p>Échange et cadrage du besoin</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <h4>Étude</h4>
+          <p>Périmètre technique & fonctionnel</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <h4>Proposition</h4>
+          <p>Offre adaptée + contrat</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <h4>Intégration</h4>
+          <p>Personnalisation & tests</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">5</div>
+          <h4>Production</h4>
+          <p>Licence + maintenance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Questions fréquentes</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>La propriété intellectuelle du logiciel est-elle cédée ?</summary>
+          <div class="content">Non. Vous obtenez une licence d’exploitation. Le socle logiciel Sana-e reste la propriété de son éditeur.</div>
+        </details>
+        <details>
+          <summary>Pouvons-nous déployer Sana-e sur notre propre infrastructure ?</summary>
+          <div class="content">Oui. C’est une option prévue. Vous conservez ainsi la maîtrise de l’hébergement et de la gouvernance des données.</div>
+        </details>
+        <details>
+          <summary>Les développements spécifiques sont-ils inclus ?</summary>
+          <div class="content">Les évolutions générales du socle sont incluses dans la licence. Les développements majeurs ou hors périmètre font l’objet de devis séparés.</div>
+        </details>
+        <details>
+          <summary>Quelle est la durée d’engagement ?</summary>
+          <div class="content">Elle est définie dans le contrat de partenariat, avec conditions de renouvellement et de résiliation clairement établies.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Prêt à enrichir votre solution numérique ?</h2>
+        <p>Demandez une étude de besoins gratuite. Nous analysons ensemble le périmètre technique et fonctionnel et vous proposons une proposition adaptée.</p>
+      </div>
+
+      <form class="form-card" onsubmit="event.preventDefault(); alert('Merci ! Votre demande a bien été enregistrée. Nous vous recontacterons rapidement.');">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Prénom *</label>
+            <input type="text" required placeholder="Jean">
+          </div>
+          <div class="form-group">
+            <label>Nom *</label>
+            <input type="text" required placeholder="Dupont">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email professionnel *</label>
+          <input type="email" required placeholder="jean.dupont@entreprise.fr">
+        </div>
+        <div class="form-group">
+          <label>Organisation *</label>
+          <input type="text" required placeholder="Nom de votre structure">
+        </div>
+        <div class="form-group">
+          <label>Rôle / Fonction</label>
+          <input type="text" placeholder="CTO, Product, Directeur digital…">
+        </div>
+        <div class="form-group">
+          <label>Message (optionnel)</label>
+          <textarea placeholder="Décrivez brièvement votre besoin ou votre solution existante…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg form-submit">Demander une étude de besoins</button>
+        <p class="form-legal">En envoyant ce formulaire, vous acceptez d’être recontacté dans le cadre de votre demande.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <div class="logo-mark" style="width:28px;height:28px;font-size:0.8rem;">S</div>
+        Sana-e — Santé mentale & Numérique
+      </div>
+      <p>Proposition commerciale indicative • Tarifs hors taxes</p>
+      <p class="small">© 2026 SanaTech. Tous droits réservés. Les modalités définitives sont établies après étude des besoins et validation du périmètre technique et fonctionnel du partenariat.</p>
+    </div>
   </footer>
 
-  <script>
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      status.style.display = "block";
-      status.textContent = "Envoi en cours...";
-
-      const data = new FormData(form);
-
-      data.append("_subject", "Nouveau contact depuis le site SanaTech");
-
-      try {
-        const response = await fetch("https://formspree.io/f/mjgjvjvj", {
-          method: "POST",
-          body: data,
-          headers: {
-            "Accept": "application/json"
-          }
-        });
-
-        if (response.ok) {
-          window.location.href = "/merci.html";
-        } else {
-          status.textContent = "Une erreur est survenue. Merci de réessayer.";
-        }
-      } catch (error) {
-        status.textContent = "Impossible d’envoyer le formulaire pour le moment.";
-      }
-    });
-  </script>
 </body>
 </html>
